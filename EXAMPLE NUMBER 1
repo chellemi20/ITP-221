@@ -1,0 +1,32 @@
+class Employee:
+    def __init__(self, name, salary):
+        self.__name = name  # Private attribute
+        self.__salary = salary  # Private attribute
+
+    def get_name(self):
+        return self.__name  # Getter method
+
+    def set_name(self, value):
+        if isinstance(value, str):
+            self.__name = value  # Setter method
+        else:
+            raise ValueError("Name must be a string.")
+
+    def get_salary(self):
+        return self.__salary  # Getter method
+
+    def set_salary(self, value):
+        if value > 0:
+            self.__salary = value  # Setter method
+        else:
+            raise ValueError("Salary must be positive.")
+
+# Usage
+employee = Employee("bardaje", 50000)
+print(employee.get_name())
+print(employee.get_salary())
+
+employee.set_name("rochelle")
+employee.set_salary(60000)
+print(employee.get_name())
+print(employee.get_salary())
